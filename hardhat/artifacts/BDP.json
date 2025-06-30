@@ -1,0 +1,21 @@
+{
+  "contractName": "BDP",
+  "abi": [
+    
+  ],
+  "bytecode": "0x...",
+  "deployedBytecode": "0x...",
+  "sourceMap": "...",
+  "deployedSourceMap": "...",
+  "source": "...",
+  "sourcePath": "/contracts/BDP.sol",
+  "ast": {},
+  "legacyAST": {},
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.25"
+  },
+  "devdoc": {},
+  "userdoc": {},
+  "methodIdentifiers": {}
+}

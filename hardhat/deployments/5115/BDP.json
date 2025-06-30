@@ -1,0 +1,5 @@
+{
+  "address": "CONTRACT_ADDRESS",
+  "transactionHash": "TRANSACTION_HASH",
+  "blockHash": "BLOCK_HASH"
+}

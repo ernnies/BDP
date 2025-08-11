@@ -1,13 +1,19 @@
 import { useState } from 'react';
 
 const PortfolioCard: React.FC = () => {
-  const [portfolio] = useState([
+  const [portfolio, setPortfolio] = useState([
     { name: 'BNN', amount: '$2,233', change: '-2%' },
     { name: 'BTC', amount: '$12,332', change: '+1%' },
     { name: 'USD', amount: '$78.1', change: '+0.5%' },
   ]);
 
   const handleRefresh = () => {
+    const updatedPortfolio = portfolio.map((item) => ({
+      ...item,
+      amount: `$${(parseFloat(item.amount.replace('$', '')) * (1 + (Math.random() - 0.5) * 0.1)).toFixed(2)}`,
+      change: `${(Math.random() > 0.5 ? '+' : '-')}${Math.random().toFixed(1)}%`,
+    }));
+    setPortfolio(updatedPortfolio);
     console.log('Portfolio refreshed');
   };
 

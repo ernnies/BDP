@@ -1,22 +1,14 @@
-import { useState, useEffect } from 'react';
-// Mock Blocksense integration
-const mockBlocksenseAnalysis = { optimized: true, mevRisk: 'Low' };
+import { useState } from 'react';
 
 const PortfolioCard: React.FC = () => {
   const [portfolio] = useState([
     { name: 'BNN', amount: '$2,233', change: '-2%' },
-    { name: 'BTC', amount: '$12,332', change: '-1%' },
-    { name: 'USD', amount: '$78.1', change: '+1%' },
+    { name: 'BTC', amount: '$12,332', change: '+1%' },
+    { name: 'USD', amount: '$78.1', change: '+0.5%' },
   ]);
 
-  useEffect(() => {
-    // Mock Blocksense analysis update
-    const interval = setInterval(() => console.log('Blocksense analysis:', mockBlocksenseAnalysis), 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleUpdate = () => {
-    console.log('Portfolio updated!');
+  const handleRefresh = () => {
+    console.log('Portfolio refreshed');
   };
 
   return (
@@ -25,9 +17,9 @@ const PortfolioCard: React.FC = () => {
         <h2 className="text-lg font-semibold text-crypto-green">Portfolio</h2>
         <button
           className="px-4 py-2 bg-crypto-purple text-white rounded-md hover:bg-opacity-90"
-          onClick={handleUpdate}
+          onClick={handleRefresh}
         >
-          Update Portfolio
+          Refresh
         </button>
       </div>
       <div className="space-y-4">

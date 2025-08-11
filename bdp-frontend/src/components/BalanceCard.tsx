@@ -1,14 +1,11 @@
 import { useState, useEffect } from 'react';
-// Mock Stork integration
-const mockStorkPrice = { btc: 60000, change: '+4.5%' };
 
 const BalanceCard: React.FC = () => {
   const [balance] = useState('$4,011.00');
-  const [change] = useState(mockStorkPrice.change);
+  const [change] = useState('+4.5%');
 
   useEffect(() => {
-    // Mock Stork price feed update
-    const interval = setInterval(() => console.log('Stork updated price:', mockStorkPrice), 5000);
+    const interval = setInterval(() => console.log('Balance updated'), 5000);
     return () => clearInterval(interval);
   }, []);
 
